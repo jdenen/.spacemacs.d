@@ -35,7 +35,7 @@ values."
      emacs-lisp
      evil-cleverparens
      git
-     ivy
+     helm
      markdown
      org
      osx
