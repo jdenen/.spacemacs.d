@@ -50,6 +50,8 @@ values."
    dotspacemacs-additional-packages '(ample-theme
                                       copy-as-format
                                       discover
+                                      el-mock
+                                      emojify
                                       multiple-cursors)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
