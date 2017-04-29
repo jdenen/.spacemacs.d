@@ -32,6 +32,8 @@ values."
    dotspacemacs-configuration-layers
    '(auto-completion
      better-defaults
+     (elfeed :variables
+             elfeed-feeds '(("http://feeds.feedburner.com/pimpmyemacs" emacs)))
      emacs-lisp
      evil-cleverparens
      git
@@ -52,7 +54,8 @@ values."
                                       discover
                                       el-mock
                                       emojify
-                                      multiple-cursors)
+                                      multiple-cursors
+                                      package-lint)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
