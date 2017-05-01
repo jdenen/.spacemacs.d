@@ -32,8 +32,8 @@ values."
    dotspacemacs-configuration-layers
    '(auto-completion
      better-defaults
-     (elfeed :variables
-             elfeed-feeds '(("http://feeds.feedburner.com/pimpmyemacs" emacs)))
+     command-log
+     elfeed
      emacs-lisp
      evil-cleverparens
      git
@@ -132,7 +132,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(ample)
+   dotspacemacs-themes '(ample spacemacs-dark spacemacs-light)
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -339,7 +339,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (multiple-cursors discover makey copy-as-format ample-theme ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake f minitest bundler inf-ruby yaml-mode mmm-mode markdown-toc s markdown-mode gh-md evil-cleverparens smartparens paredit org-projectile org-pomodoro alert log4e gntp org-download htmlize gnuplot reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl unfill smeargle org-plus-contrib mwim magit-gitflow gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete which-key wgrep use-package smex pcre2el macrostep ivy-hydra help-fns+ helm-make flx exec-path-from-shell evil-visualstar evil-escape elisp-slime-nav counsel-projectile bind-map auto-compile ace-window))))
+    (ws-butler uuidgen move-text lorem-ipsum link-hint hungry-delete expand-region eval-sexp-fu highlight clean-aindent-mode aggressive-indent volatile-highlights rainbow-delimiters indent-guide highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt command-log-mode column-enforce-mode adaptive-wrap multiple-cursors discover makey copy-as-format ample-theme ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake f minitest bundler inf-ruby yaml-mode mmm-mode markdown-toc s markdown-mode gh-md evil-cleverparens smartparens paredit org-projectile org-pomodoro alert log4e gntp org-download htmlize gnuplot reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl unfill smeargle org-plus-contrib mwim magit-gitflow gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete which-key wgrep use-package smex pcre2el macrostep ivy-hydra help-fns+ helm-make flx exec-path-from-shell evil-visualstar evil-escape elisp-slime-nav counsel-projectile bind-map auto-compile ace-window))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -4,6 +4,11 @@
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
 (add-hook 'shell-mode-hook 'with-editor-export-editor)
 
+;; Elfeed
+(setq elfeed-search-filter "+unread")
+(setq elfeed-feeds '(("http://feeds.feedburner.com/pimpmyemacs" emacs)
+                     ("http://endlessparentheses.com/atom.xml"  emacs))
+
 ;; Org
 (setq agenda-file                    "~/vc-docs/scratch.org"
       org-agenda-files               `(,agenda-file)
