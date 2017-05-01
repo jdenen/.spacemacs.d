@@ -42,6 +42,8 @@ values."
      org
      osx
      (ruby :variables ruby-test-runner 'rspec ruby-version-manager 'rbenv)
+     spacemacs-editing
+     spacemacs-editing-visual
      syntax-checking
      vinegar
      yaml)
@@ -57,7 +59,10 @@ values."
                                       multiple-cursors
                                       package-lint)
    ;; A list of packages that cannot be updated.
-   dotspacemacs-frozen-packages '()
+   dotspacemacs-frozen-packages '(avy
+                                  hungry-delete
+                                  lorem-ipsum
+                                  uuidgen)
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(chruby orgit org-present rvm)
    ;; Defines the behaviour of Spacemacs when installing packages.
