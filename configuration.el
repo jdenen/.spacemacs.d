@@ -7,7 +7,7 @@
 ;; Elfeed
 (setq elfeed-search-filter "+unread")
 (setq elfeed-feeds '(("http://feeds.feedburner.com/pimpmyemacs" emacs)
-                     ("http://endlessparentheses.com/atom.xml"  emacs))
+                     ("http://endlessparentheses.com/atom.xml"  emacs)))
 
 ;; Org
 (setq agenda-file                    "~/vc-docs/scratch.org"
