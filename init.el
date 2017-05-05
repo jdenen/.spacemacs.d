@@ -33,6 +33,7 @@ values."
    '(auto-completion
      better-defaults
      command-log
+     docker
      elfeed
      emacs-lisp
      evil-cleverparens
