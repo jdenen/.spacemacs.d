@@ -38,6 +38,7 @@ values."
      emacs-lisp
      evil-cleverparens
      git
+     haskell
      helm
      markdown
      org
