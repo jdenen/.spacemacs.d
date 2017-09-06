@@ -31,6 +31,9 @@
 ;; Magit
 (setq magit-diff-refine-hunk t)
 
+;; Markdown
+(setq markdown-command "pandoc")
+
 ;; Mastodon
 (use-package mastodon
   :load-path "~/Code/me/mastodon.el/lisp")
