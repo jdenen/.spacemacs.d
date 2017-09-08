@@ -9,7 +9,7 @@ This function should only modify configuration layer settings."
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
    ;; or `spacemacs'. (default 'spacemacs)
-   dotspacemacs-distribution 'spacemacs-base
+   dotspacemacs-distribution 'spacemacs
    ;; Lazy installation of layers (i.e. layers are installed only when a file
    ;; with a supported type is opened). Possible values are `all', `unused'
    ;; and `nil'. `unused' will lazy install only unused layers (i.e. layers
@@ -29,8 +29,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
-     better-defaults
+   '(better-defaults
      clojure
      command-log
      docker
@@ -69,7 +68,12 @@ This function should only modify configuration layer settings."
                                   lorem-ipsum
                                   uuidgen)
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(chruby orgit org-present rvm)
+   dotspacemacs-excluded-packages '(chruby
+                                    neotree
+                                    orgit
+                                    org-present
+                                    rvm
+                                    vi-tilde-fringe)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and deletes any unused
@@ -372,7 +376,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (toc-org string-inflection sayid ruby-refactor password-generator org-bullets org-brain evil-org editorconfig dante clj-refactor inflections edn peg cider-eval-sexp-fu cider seq spinner queue clojure-mode mastodon groovy-mode dash-functional intero hlint-refactor hindent helm-hoogle haskell-snippets flycheck-haskell company-ghci company-ghc ghc haskell-mode company-cabal cmm-mode dockerfile-mode docker json-mode tablist docker-tramp json-snatcher json-reformat ws-butler uuidgen move-text lorem-ipsum link-hint hungry-delete expand-region eval-sexp-fu highlight clean-aindent-mode aggressive-indent volatile-highlights rainbow-delimiters indent-guide highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt command-log-mode column-enforce-mode adaptive-wrap multiple-cursors discover makey copy-as-format ample-theme ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake f minitest bundler inf-ruby yaml-mode mmm-mode markdown-toc s markdown-mode gh-md evil-cleverparens smartparens paredit org-projectile org-pomodoro alert log4e gntp org-download htmlize gnuplot reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl unfill smeargle org-plus-contrib mwim magit-gitflow gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete which-key wgrep use-package smex pcre2el macrostep ivy-hydra help-fns+ helm-make flx exec-path-from-shell evil-visualstar evil-escape elisp-slime-nav counsel-projectile bind-map auto-compile ace-window))))
+    (winum symon spaceline restart-emacs persp-mode paradox open-junk-file linum-relative info+ hl-todo helm-purpose window-purpose imenu-list google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu dumb-jump auto-highlight-symbol ace-link xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help toc-org string-inflection sayid ruby-refactor password-generator org-bullets org-brain evil-org editorconfig dante clj-refactor inflections edn peg cider-eval-sexp-fu cider seq spinner queue clojure-mode mastodon groovy-mode dash-functional intero hlint-refactor hindent helm-hoogle haskell-snippets flycheck-haskell company-ghci company-ghc ghc haskell-mode company-cabal cmm-mode dockerfile-mode docker json-mode tablist docker-tramp json-snatcher json-reformat ws-butler uuidgen move-text lorem-ipsum link-hint hungry-delete expand-region eval-sexp-fu highlight clean-aindent-mode aggressive-indent volatile-highlights rainbow-delimiters indent-guide highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt command-log-mode column-enforce-mode adaptive-wrap multiple-cursors discover makey copy-as-format ample-theme ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake f minitest bundler inf-ruby yaml-mode mmm-mode markdown-toc s markdown-mode gh-md evil-cleverparens smartparens paredit org-projectile org-pomodoro alert log4e gntp org-download htmlize gnuplot reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl unfill smeargle org-plus-contrib mwim magit-gitflow gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete which-key wgrep use-package smex pcre2el macrostep ivy-hydra help-fns+ helm-make flx exec-path-from-shell evil-visualstar evil-escape elisp-slime-nav counsel-projectile bind-map auto-compile ace-window))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
