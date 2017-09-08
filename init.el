@@ -43,6 +43,7 @@ This function should only modify configuration layer settings."
      org
      osx
      (ruby :variables ruby-test-runner 'rspec ruby-version-manager 'rbenv)
+     (shell :variables shell-default-shell 'eshell)
      spacemacs-editing
      spacemacs-editing-visual
      syntax-checking

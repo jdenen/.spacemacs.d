@@ -9,6 +9,9 @@
 (setq elfeed-feeds '(("http://endlessparentheses.com/atom.xml"  emacs)
                      ("http://planet.emacsen.org/atom.xml"      emacs)))
 
+;; Eshell
+(setq eshell-alias-file "~/.spacemacs.d/.alias")
+
 ;; Org
 (setq agenda-file                    "~/vc-docs/scratch.org"
       org-agenda-files               `(,agenda-file)
