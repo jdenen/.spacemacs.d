@@ -1,5 +1,8 @@
 (load-file "~/.spacemacs.d/functions.el")
 
+;; Ansible
+(setq ansible::vault-password-file "~/.vault_pass")
+
 ;; Hooks
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
 (add-hook 'shell-mode-hook 'with-editor-export-editor)
