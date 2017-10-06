@@ -44,6 +44,9 @@
 (use-package mastodon
   :load-path "~/Code/me/mastodon.el/lisp")
 
+;; Registers
+(set-register ?s '(file . "~/vc-docs/scratch.org"))
+
 ;; Keybindings
 (spacemacs/set-leader-keys
   "or"  'jump-to-register
