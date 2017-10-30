@@ -7,6 +7,14 @@
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
 (add-hook 'shell-mode-hook 'with-editor-export-editor)
 
+;; EACL
+(defhydra hydra-eacl ()
+  "Use EACL for code completion."
+  ("l" eacl-complete-line)
+  ("n" eacl-complete-snipper)
+  ("s" eacl-complete-statement)
+  ("t" eacl-complete-tag))
+
 ;; Elfeed
 (setq elfeed-search-filter "+unread")
 (setq elfeed-feeds '(("http://endlessparentheses.com/atom.xml"  emacs)
@@ -50,6 +58,7 @@
 ;; Keybindings
 (spacemacs/set-leader-keys
   "or"  'jump-to-register
+  "oc"  'hydra-eacl/body
   "aoa" 'org-agenda-and-todos
   "amm" 'mastodon
   "amt" 'mastodon-toot
