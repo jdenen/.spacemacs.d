@@ -15,11 +15,6 @@
   ("s" eacl-complete-statement)
   ("t" eacl-complete-tag))
 
-;; Elfeed
-(setq elfeed-search-filter "+unread")
-(setq elfeed-feeds '(("http://endlessparentheses.com/atom.xml"  emacs)
-                     ("http://planet.emacsen.org/atom.xml"      emacs)))
-
 ;; Eshell
 (setq eshell-alias-file "~/.spacemacs.d/.alias")
 
@@ -52,6 +47,15 @@
 (use-package mastodon
   :load-path "~/Code/me/mastodon.el/lisp")
 
+;; Perspective
+(persp-mode)
+(defhydra hydra-persp ()
+  "Use `persp-mode'."
+  ("s" persp-switch)
+  ("n" persp-next)
+  ("N" persp-prev)
+  ("x" persp-kill))
+
 ;; Registers
 (set-register ?s '(file . "~/vc-docs/scratch.org"))
 
@@ -59,9 +63,11 @@
 (spacemacs/set-leader-keys
   "or"  'jump-to-register
   "oc"  'hydra-eacl/body
+  "os"  'hydra-persp/body
   "aoa" 'org-agenda-and-todos
   "amm" 'mastodon
   "amt" 'mastodon-toot
   "."   'mc/mark-next-like-this
   ","   'mc/unmark-next-like-this
+  "ww"  'ace-window
   "ok"  'tramp-cleanup-all-buffers)
