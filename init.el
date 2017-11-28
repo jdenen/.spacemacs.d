@@ -144,7 +144,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Droid Sans Mono"
-                               :size 14
+                               :size 13
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -356,7 +356,7 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  )
+  (load-file "~/.spacemacs.d/configuration.el"))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -386,7 +386,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (wgrep unfill smex sayid pcre2el osx-dictionary org-projectile org-category-capture org-download org-brain mwim ivy-hydra helm-make helm helm-core popup git-link flx evil-org org-plus-contrib evil goto-chg undo-tree eshell-z diminish counsel-projectile projectile counsel swiper seq pkg-info epl bind-key packed async ace-window avy yaml-mode xterm-color toc-org smeargle shell-pop reveal-in-osx-finder pbcopy osx-trash org-repo-todo alert log4e gntp org-bullets multi-term mmm-mode markdown-toc markdown-mode magit-gitflow launchctl htmlize request groovy-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor eshell-prompt-extras esh-help dash eacl ivy clj-refactor hydra inflections edn multiple-cursors paredit yasnippet s peg cider-eval-sexp-fu eval-sexp-fu highlight cider spinner queue clojure-mode ample-theme ws-butler which-key use-package spacemacs-theme restart-emacs quelpa popwin page-break-lines macrostep ido-vertical-mode hl-todo help-fns+ fill-column-indicator exec-path-from-shell evil-visualstar evil-surround evil-escape elisp-slime-nav bind-map auto-compile))))
+    (indent-info yaml-mode xterm-color toc-org smeargle shell-pop reveal-in-osx-finder pbcopy osx-trash org-repo-todo alert log4e gntp org-bullets multi-term mmm-mode markdown-toc markdown-mode magit-gitflow launchctl htmlize request groovy-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor eshell-prompt-extras esh-help dash eacl ivy clj-refactor hydra inflections edn multiple-cursors paredit yasnippet s peg cider-eval-sexp-fu eval-sexp-fu highlight cider spinner queue clojure-mode ample-theme ws-butler which-key use-package spacemacs-theme restart-emacs quelpa popwin page-break-lines macrostep ido-vertical-mode hl-todo help-fns+ fill-column-indicator exec-path-from-shell evil-visualstar evil-surround evil-escape elisp-slime-nav bind-map auto-compile))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
