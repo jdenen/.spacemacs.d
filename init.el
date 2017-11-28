@@ -44,7 +44,7 @@ This function should only modify configuration layer settings."
      groovy
      ivy
      markdown
-     org
+     (org :variables org-enable-reveal-js-support t)
      osx
      (ruby :variables ruby-test-runner 'rspec ruby-version-manager 'rbenv)
      (shell :variables shell-default-shell 'shell)
@@ -61,7 +61,6 @@ This function should only modify configuration layer settings."
                                       copy-as-format
                                       eacl
                                       multiple-cursors
-                                      ox-reveal
                                       perspective
                                       )
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -389,7 +388,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ox-reveal gradle-mode yaml-mode xterm-color toc-org smeargle shell-pop reveal-in-osx-finder pbcopy osx-trash org-repo-todo alert log4e gntp org-bullets multi-term mmm-mode markdown-toc markdown-mode magit-gitflow launchctl htmlize request groovy-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor eshell-prompt-extras esh-help dash eacl ivy clj-refactor hydra inflections edn multiple-cursors paredit yasnippet s peg cider-eval-sexp-fu eval-sexp-fu highlight cider spinner queue clojure-mode ample-theme ws-butler which-key use-package spacemacs-theme restart-emacs quelpa popwin page-break-lines macrostep ido-vertical-mode hl-todo help-fns+ fill-column-indicator exec-path-from-shell evil-visualstar evil-surround evil-escape elisp-slime-nav bind-map auto-compile))))
+    (ox-reveal yaml-mode xterm-color toc-org smeargle shell-pop reveal-in-osx-finder pbcopy osx-trash org-repo-todo alert log4e gntp org-bullets multi-term mmm-mode markdown-toc markdown-mode magit-gitflow launchctl htmlize request groovy-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor eshell-prompt-extras esh-help dash eacl ivy clj-refactor hydra inflections edn multiple-cursors paredit yasnippet s peg cider-eval-sexp-fu eval-sexp-fu highlight cider spinner queue clojure-mode ample-theme ws-butler which-key use-package spacemacs-theme restart-emacs quelpa popwin page-break-lines macrostep ido-vertical-mode hl-todo help-fns+ fill-column-indicator exec-path-from-shell evil-visualstar evil-surround evil-escape elisp-slime-nav bind-map auto-compile))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
