@@ -36,11 +36,9 @@ This function should only modify configuration layer settings."
      clojure
      command-log
      docker
-     elfeed
      emacs-lisp
      evil-cleverparens
      git
-     haskell
      helm
      markdown
      org
@@ -69,12 +67,12 @@ This function should only modify configuration layer settings."
                                       package-lint)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '(avy
-                                  hungry-delete
-                                  lorem-ipsum
                                   uuidgen)
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(chruby
                                     neotree
+                                    hungry-delete
+                                    lorem-ipsum
                                     orgit
                                     org-present
                                     rvm
@@ -153,7 +151,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Droid Sans Mono"
-                               :size 12
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -381,7 +379,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (eacl esxml xml+ jinja2-mode ansible-doc ansible web-beautify livid-mode skewer-mode js2-refactor js2-mode js-doc impatient-mode company-tern tern coffee-mode add-node-modules-path yapfify stickyfunc-enhance pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc helm-gtags helm-cscope xcscope ggtags cython-mode company-anaconda anaconda-mode pythonic nov winum symon spaceline restart-emacs persp-mode paradox open-junk-file linum-relative info+ hl-todo helm-purpose window-purpose imenu-list google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu dumb-jump auto-highlight-symbol ace-link xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help toc-org string-inflection sayid ruby-refactor password-generator org-bullets org-brain evil-org editorconfig dante clj-refactor inflections edn peg cider-eval-sexp-fu cider seq spinner queue clojure-mode mastodon groovy-mode dash-functional intero hlint-refactor hindent helm-hoogle haskell-snippets flycheck-haskell company-ghci company-ghc ghc haskell-mode company-cabal cmm-mode dockerfile-mode docker json-mode tablist docker-tramp json-snatcher json-reformat ws-butler uuidgen move-text lorem-ipsum link-hint hungry-delete expand-region eval-sexp-fu highlight clean-aindent-mode aggressive-indent volatile-highlights rainbow-delimiters indent-guide highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt command-log-mode column-enforce-mode adaptive-wrap multiple-cursors discover makey copy-as-format ample-theme ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake f minitest bundler inf-ruby yaml-mode mmm-mode markdown-toc s markdown-mode gh-md evil-cleverparens smartparens paredit org-projectile org-pomodoro alert log4e gntp org-download htmlize gnuplot reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl unfill smeargle org-plus-contrib mwim magit-gitflow gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete which-key wgrep use-package smex pcre2el macrostep ivy-hydra help-fns+ helm-make flx exec-path-from-shell evil-visualstar evil-escape elisp-slime-nav counsel-projectile bind-map auto-compile ace-window))))
+    (eacl esxml xml+ jinja2-mode ansible-doc ansible web-beautify livid-mode skewer-mode js2-refactor js2-mode js-doc impatient-mode company-tern tern coffee-mode add-node-modules-path yapfify stickyfunc-enhance pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc helm-gtags helm-cscope xcscope ggtags cython-mode company-anaconda anaconda-mode pythonic nov winum symon spaceline restart-emacs persp-mode paradox open-junk-file linum-relative info+ hl-todo helm-purpose window-purpose imenu-list google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu dumb-jump auto-highlight-symbol ace-link xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help toc-org string-inflection sayid ruby-refactor password-generator org-bullets org-brain evil-org editorconfig dante clj-refactor inflections edn peg cider-eval-sexp-fu cider seq spinner queue clojure-mode mastodon groovy-mode dash-functional intero hlint-refactor hindent helm-hoogle haskell-snippets flycheck-haskell company-ghci company-ghc ghc haskell-mode company-cabal cmm-mode dockerfile-mode docker json-mode tablist docker-tramp json-snatcher json-reformat ws-butler uuidgen move-text lorem-ipsum link-hint hungry-delete expand-region eval-sexp-fu highlight clean-aindent-mode aggressive-indent volatile-highlights rainbow-delimiters indent-guide highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt command-log-mode column-enforce-mode adaptive-wrap multiple-cursors discover makey copy-as-format ample-theme ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake f minitest bundler inf-ruby yaml-mode mmm-mode markdown-toc s markdown-mode gh-md evil-cleverparens smartparens paredit org-projectile org-pomodoro alert log4e gntp org-download htmlize gnuplot reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl unfill smeargle mwim magit-gitflow gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete which-key wgrep use-package smex pcre2el macrostep ivy-hydra help-fns+ helm-make flx exec-path-from-shell evil-visualstar evil-escape elisp-slime-nav counsel-projectile bind-map auto-compile ace-window))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -389,3 +387,17 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  )
 )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (yaml-mode window-numbering web-beautify volatile-highlights tern spaceline powerline smooth-scrolling ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder rbenv rainbow-delimiters pyvenv pytest pyenv-mode py-yapf pip-requirements persp-mode pcre2el pbcopy paradox package-lint osx-trash open-junk-file move-text linum-relative leuven-theme launchctl json-mode json-snatcher json-reformat js2-refactor js2-mode js-doc info+ indent-guide hy-mode highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-pydoc helm-mode-manager helm-make helm-ag groovy-mode google-translate golden-ratio flycheck-pos-tip pos-tip flycheck flx-ido fancy-battery expand-region evil-tutor evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state iedit evil-exchange evil-cleverparens smartparens evil-args evil-anzu anzu emojify ht el-mock eacl ivy discover makey define-word dash-functional cython-mode copy-as-format command-log-mode coffee-mode clj-refactor hydra inflections edn multiple-cursors paredit yasnippet peg clean-aindent-mode cider-eval-sexp-fu eval-sexp-fu highlight cider spinner queue clojure-mode bundler inf-ruby buffer-move bracketed-paste auto-highlight-symbol ansible-doc ansible anaconda-mode pythonic f aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line avy ample-theme xterm-color ws-butler which-key use-package toc-org spacemacs-theme smeargle shell-pop restart-emacs quelpa popwin page-break-lines orgit org-repo-todo org-present org-pomodoro org-bullets multi-term mmm-mode markdown-toc magit-gitflow macrostep ido-vertical-mode htmlize hl-todo help-fns+ helm-projectile helm-gitignore helm-flx helm-descbinds gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md fill-column-indicator exec-path-from-shell evil-visualstar evil-surround evil-magit evil-escape eshell-prompt-extras esh-help elisp-slime-nav bind-map auto-compile))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
