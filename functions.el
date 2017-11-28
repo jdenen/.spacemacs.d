@@ -18,3 +18,7 @@ Pass ARGS onto `eshell/ls'."
   "Capture FILE path in kill ring."
   (kill-new (concat (eshell/pwd) "/" file)))
 
+(defun ascena/todo-brands ()
+  (interactive)
+  (dolist (brand '("catherines" "dressbarn" "justice" "lanebryant" "maurices"))
+    (insert (format "- [ ] %s\n" brand))))
