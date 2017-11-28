@@ -26,65 +26,54 @@ This function should only modify configuration layer settings."
    ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '()
+   dotspacemacs-configuration-layer-path '("~/.spacemacs.d/layers")
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(javascript
-     python
-     ansible
+   '(
+     ;; ----------------------------------------------------------------
+     ;; Example of useful layers you may want to use right away.
+     ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
+     ;; `M-m f e R' (Emacs style) to install them.
+     ;; ----------------------------------------------------------------
      better-defaults
      clojure
-     command-log
-     docker
+     ;docker
      emacs-lisp
-     evil-cleverparens
      git
-     helm
+     ivy
      markdown
      org
      osx
-     (ruby :variables ruby-test-runner 'rspec ruby-version-manager 'rbenv)
-     (shell :variables shell-default-shell 'eshell)
-     spacemacs-editing
-     spacemacs-editing-visual
+     (shell :variables shell-default-shell 'shell)
      syntax-checking
      vinegar
-     yaml)
+     yaml
+     )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(ample-theme
+   dotspacemacs-additional-packages '(
+                                      ample-theme
                                       copy-as-format
-                                      dash
-                                      dash-functional
-                                      discover
                                       eacl
-                                      el-mock
-                                      emojify
                                       groovy-mode
+                                      groovy-imports
                                       multiple-cursors
-                                      package-lint)
-   ;; A list of packages that cannot be updated.
-   dotspacemacs-frozen-packages '(avy
-                                  uuidgen)
-   ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(chruby
-                                    neotree
-                                    hungry-delete
-                                    lorem-ipsum
+                                      )
+   ;; A list of packages and/or extensions that will not be install and loaded.
+   dotspacemacs-excluded-packages '(
+                                    helm
+                                    helm-projectile
                                     orgit
                                     org-present
-                                    rvm
-                                    vi-tilde-fringe)
-   ;; Defines the behaviour of Spacemacs when installing packages.
-   ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
-   ;; `used-only' installs only explicitly used packages and deletes any unused
-   ;; packages as well as their unused dependencies. `used-but-keep-unused'
-   ;; installs only the used packages but won't delete unused ones. `all'
-   ;; installs *all* packages supported by Spacemacs and never uninstalls them.
-   ;; (default is `used-only')
-   dotspacemacs-install-packages 'used-only))
+                                    org-pomodoro
+                                    org-plus-contrib
+                                    )
+   ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
+   ;; are declared in a layer which is not a member of
+   ;; the list `dotspacemacs-configuration-layers'. (default t)
+   dotspacemacs-delete-orphan-packages t))
 
 (defun dotspacemacs/init ()
   "Initialization:
@@ -104,6 +93,9 @@ It should only modify the values of Spacemacs settings."
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    ;; (default 5)
    dotspacemacs-elpa-timeout 5
+   ;; If non-nil then verify the signature for downloaded Spacelpa archives.
+   ;; (default nil)
+   dotspacemacs-verify-spacelpa-archives nil
    ;; If non-nil then spacemacs will check for updates at startup
    ;; when the current branch is not `develop'. Note that checking for
    ;; new versions works via git commands, thus it calls GitHub services
@@ -111,8 +103,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-check-for-update nil
    ;; If non-nil, a form that evaluates to a package directory. For example, to
    ;; use different package directories for different Emacs versions, set this
-   ;; to `emacs-version'. (default nil)
-   dotspacemacs-elpa-subdirectory nil
+   ;; to `emacs-version'. (default 'emacs-version)
+   dotspacemacs-elpa-subdirectory 'emacs-version
    ;; One of `vim', `emacs' or `hybrid'.
    ;; `hybrid' is like `vim' except that `insert state' is replaced by the
    ;; `hybrid state' with `emacs' key bindings. The value can also be a list
@@ -120,7 +112,7 @@ It should only modify the values of Spacemacs settings."
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
    dotspacemacs-editing-style 'hybrid
-   ;; If non-nil output loading progress in `*Messages*' buffer. (default nil)
+   ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays
    ;; the official spacemacs logo. An integer value is the index of text
@@ -128,7 +120,7 @@ It should only modify the values of Spacemacs settings."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner '999
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
@@ -140,11 +132,11 @@ It should only modify the values of Spacemacs settings."
    ;; True if the home buffer should respond to resize events. (default t)
    dotspacemacs-startup-buffer-responsive t
    ;; Default major mode of the scratch buffer (default `text-mode')
-   dotspacemacs-scratch-mode 'emacs-lisp-mode
+   dotspacemacs-scratch-mode 'text-mode
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(ample spacemacs-dark spacemacs-light)
+   dotspacemacs-themes '(ample)
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
    dotspacemacs-colorize-cursor-according-to-state t
@@ -179,7 +171,7 @@ It should only modify the values of Spacemacs settings."
    ;; works in the GUI. (default nil)
    dotspacemacs-distinguish-gui-tab nil
    ;; If non-nil `Y' is remapped to `y$' in Evil states. (default nil)
-   dotspacemacs-remap-Y-to-y$ nil
+   dotspacemacs-remap-Y-to-y$ t
    ;; If non-nil, the shift mappings `<' and `>' retain visual state if used
    ;; there. (default t)
    dotspacemacs-retain-visual-state-on-shift t
@@ -245,8 +237,8 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil to boost the loading time. (default t)
-   dotspacemacs-loading-progress-bar t
-   ;; If non-nil the frame is fullscreen when Emacs starts up. (default nil)
+   dotspacemacs-loading-progress-bar nil
+   ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
    dotspacemacs-fullscreen-at-startup nil
    ;; If non-nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
@@ -255,7 +247,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -363,10 +355,24 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (load-file "~/.spacemacs.d/configuration.el"))
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (yaml-mode xterm-color toc-org smeargle shell-pop reveal-in-osx-finder pbcopy osx-trash org-repo-todo alert log4e gntp org-bullets multi-term mmm-mode markdown-toc markdown-mode magit-gitflow launchctl htmlize request groovy-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor eshell-prompt-extras esh-help dash eacl ivy clj-refactor hydra inflections edn multiple-cursors paredit yasnippet s peg cider-eval-sexp-fu eval-sexp-fu highlight cider spinner queue clojure-mode ample-theme ws-butler which-key use-package spacemacs-theme restart-emacs quelpa popwin page-break-lines macrostep ido-vertical-mode hl-todo help-fns+ fill-column-indicator exec-path-from-shell evil-visualstar evil-surround evil-escape elisp-slime-nav bind-map auto-compile))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use
@@ -379,7 +385,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (eacl esxml xml+ jinja2-mode ansible-doc ansible web-beautify livid-mode skewer-mode js2-refactor js2-mode js-doc impatient-mode company-tern tern coffee-mode add-node-modules-path yapfify stickyfunc-enhance pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc helm-gtags helm-cscope xcscope ggtags cython-mode company-anaconda anaconda-mode pythonic nov winum symon spaceline restart-emacs persp-mode paradox open-junk-file linum-relative info+ hl-todo helm-purpose window-purpose imenu-list google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu dumb-jump auto-highlight-symbol ace-link xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help toc-org string-inflection sayid ruby-refactor password-generator org-bullets org-brain evil-org editorconfig dante clj-refactor inflections edn peg cider-eval-sexp-fu cider seq spinner queue clojure-mode mastodon groovy-mode dash-functional intero hlint-refactor hindent helm-hoogle haskell-snippets flycheck-haskell company-ghci company-ghc ghc haskell-mode company-cabal cmm-mode dockerfile-mode docker json-mode tablist docker-tramp json-snatcher json-reformat ws-butler uuidgen move-text lorem-ipsum link-hint hungry-delete expand-region eval-sexp-fu highlight clean-aindent-mode aggressive-indent volatile-highlights rainbow-delimiters indent-guide highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt command-log-mode column-enforce-mode adaptive-wrap multiple-cursors discover makey copy-as-format ample-theme ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake f minitest bundler inf-ruby yaml-mode mmm-mode markdown-toc s markdown-mode gh-md evil-cleverparens smartparens paredit org-projectile org-pomodoro alert log4e gntp org-download htmlize gnuplot reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl unfill smeargle mwim magit-gitflow gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete which-key wgrep use-package smex pcre2el macrostep ivy-hydra help-fns+ helm-make flx exec-path-from-shell evil-visualstar evil-escape elisp-slime-nav counsel-projectile bind-map auto-compile ace-window))))
+    (wgrep unfill smex sayid pcre2el osx-dictionary org-projectile org-category-capture org-download org-brain mwim ivy-hydra helm-make helm helm-core popup git-link flx evil-org org-plus-contrib evil goto-chg undo-tree eshell-z diminish counsel-projectile projectile counsel swiper seq pkg-info epl bind-key packed async ace-window avy yaml-mode xterm-color toc-org smeargle shell-pop reveal-in-osx-finder pbcopy osx-trash org-repo-todo alert log4e gntp org-bullets multi-term mmm-mode markdown-toc markdown-mode magit-gitflow launchctl htmlize request groovy-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor eshell-prompt-extras esh-help dash eacl ivy clj-refactor hydra inflections edn multiple-cursors paredit yasnippet s peg cider-eval-sexp-fu eval-sexp-fu highlight cider spinner queue clojure-mode ample-theme ws-butler which-key use-package spacemacs-theme restart-emacs quelpa popwin page-break-lines macrostep ido-vertical-mode hl-todo help-fns+ fill-column-indicator exec-path-from-shell evil-visualstar evil-surround evil-escape elisp-slime-nav bind-map auto-compile))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -387,17 +393,3 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  )
 )
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (yaml-mode window-numbering web-beautify volatile-highlights tern spaceline powerline smooth-scrolling ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder rbenv rainbow-delimiters pyvenv pytest pyenv-mode py-yapf pip-requirements persp-mode pcre2el pbcopy paradox package-lint osx-trash open-junk-file move-text linum-relative leuven-theme launchctl json-mode json-snatcher json-reformat js2-refactor js2-mode js-doc info+ indent-guide hy-mode highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-pydoc helm-mode-manager helm-make helm-ag groovy-mode google-translate golden-ratio flycheck-pos-tip pos-tip flycheck flx-ido fancy-battery expand-region evil-tutor evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state iedit evil-exchange evil-cleverparens smartparens evil-args evil-anzu anzu emojify ht el-mock eacl ivy discover makey define-word dash-functional cython-mode copy-as-format command-log-mode coffee-mode clj-refactor hydra inflections edn multiple-cursors paredit yasnippet peg clean-aindent-mode cider-eval-sexp-fu eval-sexp-fu highlight cider spinner queue clojure-mode bundler inf-ruby buffer-move bracketed-paste auto-highlight-symbol ansible-doc ansible anaconda-mode pythonic f aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line avy ample-theme xterm-color ws-butler which-key use-package toc-org spacemacs-theme smeargle shell-pop restart-emacs quelpa popwin page-break-lines orgit org-repo-todo org-present org-pomodoro org-bullets multi-term mmm-mode markdown-toc magit-gitflow macrostep ido-vertical-mode htmlize hl-todo help-fns+ helm-projectile helm-gitignore helm-flx helm-descbinds gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md fill-column-indicator exec-path-from-shell evil-visualstar evil-surround evil-magit evil-escape eshell-prompt-extras esh-help elisp-slime-nav bind-map auto-compile))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
