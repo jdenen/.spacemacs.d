@@ -42,12 +42,16 @@ This function should only modify configuration layer settings."
      evil-commentary
      git
      groovy
+     helpful
      ivy
      markdown
      (org :variables org-enable-reveal-js-support t)
      osx
+     python
      (ruby :variables ruby-test-runner 'rspec ruby-version-manager 'rbenv)
+     scheme
      (shell :variables shell-default-shell 'shell)
+     spacemacs-layouts
      syntax-checking
      vinegar
      yaml
@@ -60,8 +64,8 @@ This function should only modify configuration layer settings."
                                       ample-theme
                                       copy-as-format
                                       eacl
+                                      gradle-mode
                                       multiple-cursors
-                                      perspective
                                       )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(
