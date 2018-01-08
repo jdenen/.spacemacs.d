@@ -18,6 +18,9 @@
 ;; Eshell
 (setq eshell-alias-file "~/.spacemacs.d/.alias")
 
+;; Key binds
+(bind-key "M-'" 'hippie-expand)
+
 ;; Org
 (setq agenda-file                    "~/vc-docs/scratch.org"
       org-agenda-files               `(,agenda-file)
@@ -47,15 +50,6 @@
 (use-package mastodon
   :load-path "~/Code/me/mastodon.el/lisp")
 
-;; Perspective
-(persp-mode)
-(defhydra hydra-persp ()
-  "Use `persp-mode'."
-  ("s" persp-switch)
-  ("n" persp-next)
-  ("N" persp-prev)
-  ("x" persp-kill))
-
 ;; Registers
 (set-register ?s '(file . "~/vc-docs/scratch.org"))
 
@@ -63,7 +57,6 @@
 (spacemacs/set-leader-keys
   "or"  'jump-to-register
   "oc"  'hydra-eacl/body
-  "os"  'hydra-persp/body
   "aoa" 'org-agenda-and-todos
   "amm" 'mastodon
   "amt" 'mastodon-toot
